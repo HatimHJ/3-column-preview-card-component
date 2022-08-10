@@ -68,6 +68,22 @@
 		<script src="https://unpkg.com/jparticles/browser/jparticles.base.js"></script>
 		<script src="https://unpkg.com/jparticles/browser/particle.js"></script>
 		<script>
+			document.querySelectorAll(".box").forEach((item) => {
+				item.addEventListener("mouseover", () => {
+					[...item.parentElement.children].forEach((child) => {
+						child.classList.remove("cancel");
+						item.parentElement.classList.remove("hover");
+					});
+					item.parentElement.classList.add("hover");
+					item.classList.add("cancel");
+				});
+
+				item.addEventListener("mouseout", () => {
+					item.parentElement.classList.remove("hover");
+				});
+			});
+
+			// particles
 			new JParticles.Particle(".bg", {
 				color: ["#004241", "#006970", "#e38826", "#d5d02c"],
 				lineShape: "spider",

@@ -20,3 +20,9 @@
   left: -10rem;
   width: 0px;height: 0px;
 }
+
+.hover .box{
+  filter: blur(3px);
+  transition: all .2s;
+}
+.cancel{filter: blur(0) !important;}
